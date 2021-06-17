@@ -85,6 +85,10 @@ public class User implements Serializable {
 	public Set<Role> getRoles() {
 		return roles;
 	}
+	
+	public List<Notification> getNotifications() {
+		return notifications;
+	}
 
 	@Override
 	public int hashCode() {
@@ -109,10 +113,6 @@ public class User implements Serializable {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
-	}
-
-	public void setRoles(Set<Role> roles) {
-		this.roles = roles;
 	}
 
 }

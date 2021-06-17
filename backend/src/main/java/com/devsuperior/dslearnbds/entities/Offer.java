@@ -2,6 +2,7 @@ package com.devsuperior.dslearnbds.entities;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -36,7 +37,10 @@ public class Offer implements Serializable {
 	private Course course;
 	
 	@OneToMany(mappedBy = "offer")
-	List<Resource> resources;
+	private List<Resource> resources = new ArrayList<>();
+	
+	@OneToMany(mappedBy = "offer")
+	private List<Topic> topics = new ArrayList<>();	
 
 	public Offer() {
 	}
@@ -91,6 +95,10 @@ public class Offer implements Serializable {
 
 	public List<Resource> getResources() {
 		return resources;
+	}
+	
+	public List<Topic> getTopics() {
+		return topics;
 	}
 
 	@Override
