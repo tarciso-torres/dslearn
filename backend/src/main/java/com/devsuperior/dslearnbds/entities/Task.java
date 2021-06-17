@@ -13,8 +13,8 @@ public class Task extends Lesson {
 	private static final long serialVersionUID = 1L;
 
 	private String description;
-	private String questionCount;
-	private String approvalCount;
+	private Integer questionCount;
+	private Integer approvalCount;
 	private Double weight;
 
 	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
@@ -23,7 +23,7 @@ public class Task extends Lesson {
 	public Task() {
 	}
 
-	public Task(Long id, String title, Integer position, String description, String questionCount, String approvalCount,
+	public Task(Long id, String title, Integer position, String description, Integer questionCount, Integer approvalCount,
 			Double weight, Instant dueDate) {
 		super(id, title, position);
 		this.description = description;
@@ -41,19 +41,19 @@ public class Task extends Lesson {
 		this.description = description;
 	}
 
-	public String getQuestionCount() {
+	public Integer getQuestionCount() {
 		return questionCount;
 	}
 
-	public void setQuestionCount(String questionCount) {
+	public void setQuestionCount(Integer questionCount) {
 		this.questionCount = questionCount;
 	}
 
-	public String getApprovalCount() {
+	public Integer getApprovalCount() {
 		return approvalCount;
 	}
 
-	public void setApprovalCount(String approvalCount) {
+	public void setApprovalCount(Integer approvalCount) {
 		this.approvalCount = approvalCount;
 	}
 
